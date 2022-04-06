@@ -1,0 +1,42 @@
+
+<div class="card">
+        <div class="card-body">
+          <div class="h2">
+            {% if post.author.username %}
+            {{ post.author.get_full_name }}
+            {% else %}
+            {{ author.get_full_name }}
+            {% endif %}
+          </div>
+          <div class="h3 text-muted">
+            {% if post.author.username %}
+            {{ post.author.username }}
+            {% else %}
+            {{ author.username }}
+            {% endif %}
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="h6 text-muted">
+              {% if post.author.following.count %}
+              Подписчиков: {{ post.author.following.count }} <br>
+              Подписан: {{ post.author.follower.count }}
+              {% else %}
+              Подписчиков: {{ author.following.count }} <br>
+              Подписан: {{ author.follower.count }}
+              {% endif %}
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">
+              {% if post.author.username %}
+              Записей: {{ post.author.posts.count }}
+              {% else %}
+              Записей: {{ author.posts.count }}
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>

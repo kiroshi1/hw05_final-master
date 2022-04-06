@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Последние обновления на сайте{% endblock %}
+{% block header %}Последние обновления на сайте{% endblock %}
+{% load thumbnail %}
+{% block content %}
+<div class="container">
+  {% include 'includes/menu.html' %}
+  {% for post in page %}
+    {% include 'includes/post_card.html' %}
+  {% endfor %}
+</div>
+  {% include "includes/paginator.html" %}
+
+{% endblock %}

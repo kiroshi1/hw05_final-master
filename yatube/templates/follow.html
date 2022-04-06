@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block header %}Мои подписки{% endblock %}
+{% block content %}
+  <div class="container">
+    {% include 'includes/menu.html' %}
+    {% for post in page %}
+      {% include 'includes/post_card.html' %}
+    {% endfor %}
+
+    {% include 'includes/paginator.html'  %}
+
+  </div>
+{% endblock %}
